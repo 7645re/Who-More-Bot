@@ -1,15 +1,15 @@
 import asyncio
-from time import sleep
 from typing import Optional
 from vkbottle.bot import Bot, Message
 from datetime import datetime
 from vkbottle.tools.dev_tools import keyboard
 import commands
 import keyboards
+from config import get_token
 
 
 start_time = datetime.now()
-bot = Bot("ef86b7d154fd8f51f656fb59242e4ace0e1604048cbaf1aa15d284ca982aa38227f019e0c3cd0c7989fa9")
+bot = Bot(get_token("token.txt"))
 event_loop = asyncio.get_event_loop()
 WhoMore_rooms = {"1_flor": commands.WhoMore(name="1_flor", min=50, max=110, loop=event_loop, bot=bot), 
                 "2_flor": commands.WhoMore(name="2_flor", min=110, max=160, loop=event_loop, bot=bot),
